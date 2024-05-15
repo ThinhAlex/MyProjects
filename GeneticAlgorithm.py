@@ -1,9 +1,5 @@
-"""
-PROJECT HEADER GOES HERE
-"""
 import random
 
-#DO NOT CHANGE THIS
 random.seed(10)
 
 NUM_GENERATIONS = 200
@@ -32,9 +28,6 @@ INPUT = "\nWould you like to continue? (y/n) "
 
 
 def fitness(target, individual):
-    """
-    DOCSTRING
-    """
     correct = 0
     for i in range(len(target)):
         if individual[i] == target[i]:
@@ -44,9 +37,6 @@ def fitness(target, individual):
 
 
 def five_tournament_selection(population, target):
-    """
-    DOCSTRING
-    """
     max = -100
     idv_max = ""
     for i in range(5):       
@@ -61,9 +51,6 @@ def five_tournament_selection(population, target):
 
 
 def make_population(target):
-    """
-    DOCSTRING
-    """
     target_len = len(target)
     population = ""
     for i in range(NUM_POPULATION):
@@ -75,9 +62,6 @@ def make_population(target):
 
 
 def mutation(individual):
-    """
-    DOCSTRING
-    """
     new_idv = ""
     for i in range(len(individual)):
         chance = random.random()
@@ -90,9 +74,6 @@ def mutation(individual):
 
 
 def single_point_crossover(individual1, individual2):
-    """
-    DOCSTRING
-    """
     chance = random.random()
     if chance <= PROBABILITY_CROSSOVER:
         cross_point = random.randint(1, len(individual1))
@@ -105,9 +86,6 @@ def single_point_crossover(individual1, individual2):
 
 
 def find_best_individual(population, target):
-    """
-    DOCSTRING
-    """
     max = -100
     best_idv = ""
     for i in range(NUM_POPULATION):
@@ -181,12 +159,5 @@ def main():
         if prompt == "n":
             print("\n\nThank you for using GeneticGuess Sentencer!")
         
-
-# These two lines allow this program to be imported into other codes
-# such as our function tests code allowing other functions to be run
-# and tested without 'main' running.  However, when this program is
-# run alone, 'main' will execute.
-# DO NOT CHANGE THESE 2 lines or Do NOT add code to them. Everything
-# you add should be in the 'main' function above.
 if __name__ == '__main__':
     main()
